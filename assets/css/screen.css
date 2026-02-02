@@ -47,6 +47,7 @@
    └─ 23.Custom — Authors & Tags page
    
    //////////////////////////////////////////////////////////////////////////
+/* //////////////////////////////////////////////////////////////////////////
 
    I. Customize
 
@@ -153,29 +154,19 @@
    --opacity-search: rgba(0, 0, 0, .2);
 }
 
-/* Sepia version
-   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
-.sepia-mode {
-   --color-font-one: #1e1e1e;
-   --color-font-two: #f1efe3;
-   --color-font-black: #1e1e1e;
-   --color-font-white: #f1efe3;
-   --color-one: #e0e0d4;
-   --color-two: #d9d7cb;
-   --color-three: #1e1e1e;
-   --color-four: #f1efe3;
-   --color-five: #e8e6db;
-   --color-six: #f1efe3;
-   --color-seven: #f1efe3;
-   --color-white: #f1efe3;
-   --color-black: #1e1e1e;
-   --color-body: #f1efe3;
-   --color-border-one: #d9d7cb;
-   --color-border-two: #939184;
-   --opacity-search: rgba(0, 0, 0, .3);
-}
 
-/* Dark version
+/* //////////////////////////////////////////////////////////////////////////
+
+   Dark Mode System
+   
+   Three options available:
+   1. Light Mode (default) - Always light theme
+   2. Dark Mode - Always dark theme (Cyberpunk vibe!)
+   3. System (Auto) - Respects user's OS preference via prefers-color-scheme
+
+   ////////////////////////////////////////////////////////////////////////// */
+
+/* Dark Mode - Force dark theme regardless of system preference
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .dark-mode {
    --color-font-one: #fafafa;
@@ -204,7 +195,7 @@
 }
 
 
-/* Auto dark version [duplicate dark version]
+/* System (Auto) - Respects user's OS/browser dark mode preference
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media (prefers-color-scheme:dark) {
    .auto-dark-mode {
@@ -6390,4 +6381,529 @@ div.is-archive-image {
       flex-direction: column;
     }
   }
+
+
+/* //////////////////////////////////////////////////////////////////////////
+
+   Custom Features - Season Modes, CTA Box, Hero Announcement, TOC
+
+   ////////////////////////////////////////////////////////////////////////// */
+
+/* Season Mode - Accent Color Changes
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body.season-spring {
+	--ghost-accent-color: #10b981;
+	--color-accent: #10b981;
+}
+
+body.season-autumn {
+	--ghost-accent-color: #f59e0b;
+	--color-accent: #f59e0b;
+}
+
+body.season-winter {
+	--ghost-accent-color: #3b82f6;
+	--color-accent: #3b82f6;
+}
+
+/* Season Particles
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.season-particles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.season-particles.leaf-particles::before,
+.season-particles.leaf-particles::after {
+	content: '🍂';
+	position: absolute;
+	font-size: 2rem;
+	animation: fall 15s infinite linear;
+	opacity: 0.6;
+}
+
+.season-particles.leaf-particles::before {
+	left: 20%;
+	animation-delay: 0s;
+}
+
+.season-particles.leaf-particles::after {
+	left: 70%;
+	animation-delay: 7s;
+}
+
+.season-particles.snow-particles::before,
+.season-particles.snow-particles::after {
+	content: '❄️';
+	position: absolute;
+	font-size: 1.5rem;
+	animation: fall 12s infinite linear;
+	opacity: 0.7;
+}
+
+.season-particles.snow-particles::before {
+	left: 30%;
+	animation-delay: 0s;
+}
+
+.season-particles.snow-particles::after {
+	left: 60%;
+	animation-delay: 5s;
+}
+
+@keyframes fall {
+	0% {
+		top: -10%;
+		transform: translateX(0) rotate(0deg);
+	}
+	100% {
+		top: 110%;
+		transform: translateX(100px) rotate(360deg);
+	}
+}
+
+/* Hero Announcement Pill
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hero-announcement {
+	display: inline-block;
+	padding: 8px 16px;
+	margin-bottom: 20px;
+	background: var(--ghost-accent-color, #15171a);
+	color: #fff;
+	border-radius: 50px;
+	font-size: 1.4rem;
+	font-weight: 500;
+	letter-spacing: -0.01em;
+}
+
+/* CTA Box
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.cta-box {
+	margin: 40px 0;
+	padding: 40px;
+	background: var(--color-bg-box);
+	border: var(--border) var(--color-border);
+	border-radius: var(--border-radius);
+	text-align: center;
+}
+
+.cta-box.is-subtle {
+	background: transparent;
+	border: none;
+	padding: 20px 0;
+}
+
+.cta-box-title {
+	margin: 0 0 12px;
+	font-size: 2.8rem;
+	font-weight: var(--font-weight-one-bold);
+	letter-spacing: -0.02em;
+}
+
+.cta-box-description {
+	margin: 0 0 24px;
+	font-size: 1.7rem;
+	color: var(--color-text);
+	opacity: 0.8;
+}
+
+/* Table of Contents
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.table-of-contents {
+	margin: 0 0 40px;
+	padding: 24px;
+	background: var(--color-bg-box);
+	border: var(--border) var(--color-border);
+	border-radius: var(--border-radius);
+}
+
+.table-of-contents h4 {
+	margin: 0 0 16px;
+	font-size: 1.8rem;
+	font-weight: var(--font-weight-one-bold);
+}
+
+.table-of-contents ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.table-of-contents li {
+	margin: 8px 0;
+}
+
+.table-of-contents a {
+	color: var(--color-text);
+	text-decoration: none;
+	font-size: 1.5rem;
+	transition: color 0.2s ease;
+}
+
+.table-of-contents a:hover {
+	color: var(--ghost-accent-color);
+}
+
+.table-of-contents li.toc-h3 {
+	padding-left: 20px;
+}
+
+.table-of-contents li.toc-h3 a {
+	font-size: 1.4rem;
+	opacity: 0.8;
+}
+
+/* Reading Progress Bar
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.post-progress {
+	position: fixed;
+	z-index: 90;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 8px;
+	transition: opacity 0.15s ease-out 0.3s;
+	border: none;
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.post-progress:not([value]) {
+	display: none;
+}
+
+.post-progress,
+.post-progress[value]::-webkit-progress-bar {
+	background-color: transparent;
+}
+
+.post-progress[value]::-webkit-progress-value {
+	background-color: var(--ghost-accent-color);
+}
+
+.post-progress[value]::-moz-progress-bar {
+	background-color: var(--ghost-accent-color);
+}
+
+.post-progress[value='100'] {
+	opacity: 0;
+}
+
+/* //////////////////////////////////////////////////////////////////////////
+
+   Artist's Control - Header Styles & Card Orientations
+
+   ////////////////////////////////////////////////////////////////////////// */
+
+/* Header Styles
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Floating (Glass) Header - Default with glassmorphism effect */
+body.header-floating .header-section {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	background: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode.header-floating .header-section,
+.auto-dark-mode.header-floating .header-section {
+	background: rgba(21, 23, 26, 0.8);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+	.auto-dark-mode.header-floating .header-section {
+		background: rgba(21, 23, 26, 0.8);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+}
+
+/* Sticky (Solid) Header - Solid background that sticks */
+body.header-sticky .header-section {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: var(--color-body);
+	border-bottom: var(--border) var(--color-border);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Classic (Scrolls away) Header - Default behavior, scrolls with page */
+body.header-classic .header-section {
+	position: relative;
+}
+
+/* Card Image Orientation - Global Control
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* These are controlled via @custom.card_image_orientation and applied 
+   dynamically in item.hbs. The CSS classes already exist above:
+   - Default (16:9): .global-image-orientation (no additional class)
+   - Portrait (3:4): .global-image-orientation.is-portrait
+   - Square (1:1): .global-image-orientation.is-square  
+   - Natural (Uncropped): .global-image-orientation.is-natural
+*/
+
+
+/* //////////////////////////////////////////////////////////////////////////
+
+   Typography Engine - Font Pairing System
+
+   ////////////////////////////////////////////////////////////////////////// */
+
+/* Modern Sans (Manrope) - Tech Look
+   Clean, geometric, perfect for modern designs
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body.font-modern-sans h1,
+body.font-modern-sans h2,
+body.font-modern-sans h3 {
+	letter-spacing: -0.02em;
+}
+
+body.font-modern-sans p,
+body.font-modern-sans .post-content {
+	line-height: 1.7;
+}
+
+/* Elegant Serif (Merriweather) - Book Look
+   Traditional, readable, perfect for long-form content
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body.font-elegant-serif h1,
+body.font-elegant-serif h2,
+body.font-elegant-serif h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.3;
+}
+
+body.font-elegant-serif p,
+body.font-elegant-serif .post-content {
+	line-height: 1.8;
+	font-size: 1.05em;
+}
+
+body.font-elegant-serif .post-content p {
+	margin-bottom: 1.5em;
+}
+
+/* System (Apple Default) - Native Look
+   Uses system fonts for maximum performance and familiarity
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body.font-system h1,
+body.font-system h2,
+body.font-system h3 {
+	letter-spacing: -0.015em;
+}
+
+body.font-system p,
+body.font-system .post-content {
+	line-height: 1.65;
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////
+
+   Monetization/Membership Controls
+
+   ////////////////////////////////////////////////////////////////////////// */
+
+/* Member CTA Styles
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Inline Banner - Default, shows in post content */
+.members-cta {
+	margin: 40px 0;
+	padding: 40px;
+	background: var(--color-bg-box);
+	border: var(--border) var(--color-border);
+	text-align: center;
+}
+
+/* Popup Modal - Shows as a modal overlay */
+.members-cta.is-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	max-width: 600px;
+	width: 90%;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+	animation: modalFadeIn 0.3s ease;
+	display: none;
+}
+
+.members-cta.is-modal::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: -1;
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+
+.modal-close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 36px;
+	height: 36px;
+	border: none;
+	background: transparent;
+	font-size: 3.2rem;
+	line-height: 1;
+	color: var(--color-text);
+	cursor: pointer;
+	opacity: 0.6;
+	transition: opacity 0.2s ease;
+	z-index: 10;
+}
+
+.modal-close:hover {
+	opacity: 1;
+}
+
+@keyframes modalFadeIn {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -45%);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+}
+
+/* Footer Only - Styled for footer placement */
+.footer-member-cta {
+	margin-bottom: 40px;
+}
+
+.members-cta.is-footer-only {
+	margin: 0;
+	background: var(--color-bg-box);
+	border: var(--border) var(--color-border);
+}
+
+/* Comment Count Display
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.meta-comment-count {
+	display: inline-block;
+	margin-left: 12px;
+	padding: 4px 10px;
+	background: var(--color-bg-box);
+	border-radius: 16px;
+	font-size: 1.4rem;
+	opacity: 0.8;
+	transition: opacity 0.2s ease;
+}
+
+.meta-comment-count:hover {
+	opacity: 1;
+}
+
+/* --- ABREEZE STUDIO: ADAPTIVE CARDS --- */
+
+/* 1. Define the "Glow" colors for both modes */
+:root {
+	--card-border-light: #e5e7eb;
+	--card-glow-light: rgba(165, 216, 255, 0.6); /* Soft Blue */
+	
+	--card-bg-dark: #1e293b; /* Deep Slate (Not pitch black) */
+	--card-border-dark: #334155;
+	--card-glow-dark: rgba(165, 216, 255, 0.25); /* Subtle Blue for Dark Mode */
+}
+
+/* 2. The Card Base (Shape & Structure) */
+.gh-card, .post-card, article.post {
+	border-radius: 24px !important;  /* The Curve */
+	border: 1px solid transparent !important; /* Ready for border change */
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+	padding: 16px !important;
+	overflow: hidden;
+	
+	/* Let the theme decide the background, OR force a nice slate in dark mode */
+	/* If the theme adds a 'dark' class to the body tag, we use it */
+}
+
+/* 3. LIGHT MODE SPECIFICS (Default) */
+.gh-card, .post-card {
+	background-color: #ffffff;
+	border-color: var(--card-border-light) !important;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+}
+
+/* 4. DARK MODE SPECIFICS (Automatic Detection) */
+/* Reiro usually puts a [data-theme="dark"] or class="dark-mode" on the HTML/Body */
+[data-theme="dark"] .gh-card, 
+.dark-mode .gh-card,
+.gh-head-transparent .gh-card { /* Fallback selector */
+	background-color: var(--card-bg-dark) !important;
+	border-color: var(--card-border-dark) !important;
+	color: #f1f5f9 !important; /* Make text light grey/white */
+}
+
+/* 5. The "Studio Glow" (Works in both modes) */
+.gh-card:hover, .post-card:hover {
+	transform: translateY(-5px) !important;
+	border-color: #a5d8ff !important; /* Always Blue Border */
+	z-index: 10;
+}
+
+/* Light Mode Glow */
+.gh-card:hover {
+	box-shadow: 0 15px 30px -5px var(--card-glow-light) !important;
+}
+
+/* Dark Mode Glow */
+[data-theme="dark"] .gh-card:hover, .dark-mode .gh-card:hover {
+	box-shadow: 0 15px 30px -5px var(--card-glow-dark) !important;
+	background-color: #252f40 !important; /* Slightly lighter on hover */
+}
+
+/* 6. Typography Fixes for Dark Mode */
+[data-theme="dark"] .gh-card-title {
+	color: #ffffff !important;
+}
+
+[data-theme="dark"] .gh-card-meta {
+	color: #94a3b8 !important; /* Muted Blue-Grey */
+	font-family: monospace;
+}
+
+/* 7. The "Medium" Badge Style */
+.medium-badge {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: #000000;
+	color: #ffffff;
+	font-family: 'Times New Roman', serif;
+	font-weight: 900;
+	width: 28px;
+	height: 28px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	z-index: 10;
+}
 
