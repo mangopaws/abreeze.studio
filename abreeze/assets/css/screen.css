@@ -506,7 +506,8 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    right: 0;
    left: 0;
    height: 45vh;
-   background: no-repeat center center/cover;
+   background: linear-gradient(135deg, #a5d8ff 0%, #ffffff 100%) no-repeat center center/cover;
+   background-size: cover;
 }
 
 .global-cover:not(.is-membership) {
