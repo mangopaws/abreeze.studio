@@ -6764,6 +6764,19 @@ body.font-system .post-content {
 	opacity: 1;
 }
 
+/* Modal CTA button contrast */
+.members-cta.is-modal .global-button.is-cta {
+	color: #fff;
+}
+
+.members-cta.is-modal .global-button.is-cta::before {
+	background-color: #000;
+}
+
+.members-cta.is-modal .global-button.is-cta:hover::before {
+	background-color: #111;
+}
+
 @keyframes modalFadeIn {
 	from {
 		opacity: 0;
