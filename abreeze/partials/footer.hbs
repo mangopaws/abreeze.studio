@@ -24,18 +24,6 @@
 			{{>members/subscribe_form is_button=true}}
 		</div>
 		<div class="footer-nav">
-			<div class="footer-nav-column is-social">
-				<small>{{t "Social"}}</small>
-				<ul>
-					{{#if @site.facebook}}
-					<li><a href="{{facebook_url}}" target="_blank" rel="noopener">{{>icons/social/facebook}}Facebook</a></li>
-					{{/if}}
-					
-					<li><a href="https://www.instagram.com/hastingscounty" target="_blank" rel="noopener">{{>icons/social/instagram}}Instagram</a></li>
-					
-					{{>footer_icons}}
-				</ul>
-			</div>
 			{{#if @site.secondary_navigation}}
 			{{navigation type="secondary"}}
 			{{/if}}
@@ -45,7 +33,6 @@
 			{{#if @custom.footer_copyright}}
 			{{{@custom.footer_copyright}}}
 			{{else}}
-			{{{t "Published with {ghost-link}." ghost-link="<a href=\"https://ghost.org\" target=\"_blank\" rel=\"noopener noreferrer\">Ghost</a>"}}}
 			{{/if}}
 		</div>
 	</div>

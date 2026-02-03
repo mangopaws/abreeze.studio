@@ -6271,50 +6271,6 @@ div.is-archive-image {
   }
 }
 
-/* =====================================================
-   Updated Icon Paths for Stat Items
-   ===================================================== */
-/* Use updated absolute URLs for background icons if needed */
-.stat-item.distance div,
-.stat-item.distance::before {
-  background-image: url(https://hastings.bike/assets/icons/distance.png);
-}
-
-.stat-item.days div,
-.stat-item.days::before {
-  background-image: url(https://hastings.bike/assets/icons/days.png);
-}
-
-.stat-item.rideability div,
-.stat-item.rideability::before {
-  background-image: url(https://hastings.bike/assets/icons/rideability.png);
-}
-
-.stat-item.unpaved div,
-.stat-item.unpaved::before {
-  background-image: url(https://hastings.bike/assets/icons/pavement.png);
-}
-
-.stat-item.singletrack div,
-.stat-item.singletrack::before {
-  background-image: url(https://hastings.bike/assets/icons/singletrack.png);
-}
-
-.stat-item.ascent div,
-.stat-item.ascent::before {
-  background-image: url(https://hastings.bike/assets/icons/ascent.png);
-}
-
-.stat-item.highpoint div,
-.stat-item.highpoint::before {
-  background-image: url(https://hastings.bike/assets/icons/highpoint.png);
-}
-
-.stat-item.difficulty div,
-.stat-item.difficulty::before {
-  background-image: url(https://hastings.bike/assets/icons/difficulty.png);
-}
-
  /* Container for the events list with optimal text width */
   .events-list {
     max-width: min(800px, 90vw);  /* Caps at 800px but uses 90% of the viewport on smaller screens */
@@ -6818,92 +6774,193 @@ body.font-system .post-content {
 	opacity: 1;
 }
 
-/* --- ABREEZE STUDIO: ADAPTIVE CARDS --- */
-
-/* 1. Define the "Glow" colors for both modes */
-:root {
-	--card-border-light: #e5e7eb;
-	--card-glow-light: rgba(165, 216, 255, 0.6); /* Soft Blue */
-	
-	--card-bg-dark: #1e293b; /* Deep Slate (Not pitch black) */
-	--card-border-dark: #334155;
-	--card-glow-dark: rgba(165, 216, 255, 0.25); /* Subtle Blue for Dark Mode */
+/* --- ABREEZE STUDIO: POST META BREADCRUMB --- */
+.post-meta-breadcrumb {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.3rem;
+	font-weight: 500;
+	letter-spacing: -0.02em;
+	color: #86868b;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 1.5rem;
 }
 
-/* 2. The Card Base (Shape & Structure) */
-.gh-card, .post-card, article.post {
-	border-radius: 24px !important;  /* The Curve */
-	border: 1px solid transparent !important; /* Ready for border change */
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-	padding: 16px !important;
-	overflow: hidden;
-	
-	/* Let the theme decide the background, OR force a nice slate in dark mode */
-	/* If the theme adds a 'dark' class to the body tag, we use it */
+.post-meta-breadcrumb a {
+	color: #86868b;
+	text-decoration: none;
+	transition: color 0.2s ease;
 }
 
-/* 3. LIGHT MODE SPECIFICS (Default) */
-.gh-card, .post-card {
-	background-color: #ffffff;
-	border-color: var(--card-border-light) !important;
-	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+.post-meta-breadcrumb a:hover {
+	color: #1d1d1f;
 }
 
-/* 4. DARK MODE SPECIFICS (Automatic Detection) */
-/* Reiro usually puts a [data-theme="dark"] or class="dark-mode" on the HTML/Body */
-[data-theme="dark"] .gh-card, 
-.dark-mode .gh-card,
-.gh-head-transparent .gh-card { /* Fallback selector */
-	background-color: var(--card-bg-dark) !important;
-	border-color: var(--card-border-dark) !important;
-	color: #f1f5f9 !important; /* Make text light grey/white */
+.post-meta-breadcrumb .reading-time {
+	color: #1d1d1f;
 }
 
-/* 5. The "Studio Glow" (Works in both modes) */
-.gh-card:hover, .post-card:hover {
-	transform: translateY(-5px) !important;
-	border-color: #a5d8ff !important; /* Always Blue Border */
-	z-index: 10;
+/* --- ABREEZE STUDIO: FIXED LOGO --- */
+.studio-fixed-logo {
+	position: fixed;
+	bottom: 30px;
+	left: 30px;
+	z-index: 1000;
+	opacity: 0.3; /* Muted by default like Apple's subtle branding */
+	transition: opacity 0.3s ease;
 }
 
-/* Light Mode Glow */
-.gh-card:hover {
-	box-shadow: 0 15px 30px -5px var(--card-glow-light) !important;
+.studio-fixed-logo:hover {
+	opacity: 1; /* Pops when hovered */
 }
 
-/* Dark Mode Glow */
-[data-theme="dark"] .gh-card:hover, .dark-mode .gh-card:hover {
-	box-shadow: 0 15px 30px -5px var(--card-glow-dark) !important;
-	background-color: #252f40 !important; /* Slightly lighter on hover */
+/* Ensure it disappears on small mobile screens to stay clean */
+@media (max-width: 480px) {
+	.studio-fixed-logo {
+		display: none;
+	}
 }
 
-/* 6. Typography Fixes for Dark Mode */
-[data-theme="dark"] .gh-card-title {
-	color: #ffffff !important;
+/* --- ABREEZE STUDIO: STICKY TOC --- */
+
+/* 1. Position the container to the left of the text */
+@media (min-width: 1600px) {
+	.toc-container {
+		position: fixed;
+		left: 5vw;            /* Adjust based on your whitespace preference */
+		top: 15vh;
+		width: 200px;
+		z-index: 10;
+	}
+
+	.post-content {
+		margin-left: 300px;   /* Make room for the fixed TOC (5vw + 200px TOC width + gap) */
+		margin-right: auto;
+	}
 }
 
-[data-theme="dark"] .gh-card-meta {
-	color: #94a3b8 !important; /* Muted Blue-Grey */
-	font-family: monospace;
+/* 2. Style the links to be clean and minimal */
+.toc-list {
+	list-style: none;
+	padding: 0;
+	border-left: 1px solid var(--color-border-one); /* Subtle vertical line */
 }
 
-/* 7. The "Medium" Badge Style */
-.medium-badge {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	background: #000000;
-	color: #ffffff;
-	font-family: 'Times New Roman', serif;
-	font-weight: 900;
-	width: 28px;
-	height: 28px;
-	border-radius: 6px;
+.toc-link {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.4rem;
+	color: var(--color-font-one);
+	opacity: 0.5;
+	padding: 8px 16px;
+	display: block;
+	transition: all 0.2s ease;
+}
+
+/* 3. The "Active" state (as you scroll) */
+.is-active-link {
+	opacity: 1;
+	color: var(--ghost-accent-color);
+	font-weight: 600;
+	border-left: 2px solid var(--ghost-accent-color);
+	margin-left: -1px; /* Overlaps the border for a clean look */
+}
+
+/* Hide on mobile to keep it clean */
+@media (max-width: 1599px) {
+	.toc-container {
+		display: none;
+	}
+}
+
+/* --- ABREEZE STUDIO: FIXED LOGO --- */
+.studio-fixed-anchor {
+	position: fixed;
+	bottom: 30px;
+	left: 30px;
+	z-index: 1000;
+	opacity: 0.3; /* Muted by default like Apple's subtle branding */
+	transition: opacity 0.3s ease;
+}
+
+.studio-fixed-anchor:hover {
+	opacity: 1; /* Pops when hovered */
+}
+
+.studio-fixed-anchor a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 16px;
-	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-	z-index: 10;
+	text-decoration: none;
+}
+
+/* Ensure it disappears on small mobile screens to stay clean */
+@media (max-width: 480px) {
+	.studio-fixed-anchor {
+		display: none;
+	}
+}
+
+/* --- ABREEZE STUDIO: CURSOR AURA --- */
+.cursor-aura {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 800px;  /* Large radius for a high-end feel */
+   height: 800px;
+   /* Use a very soft version of your studio blue */
+   background: radial-gradient(
+      circle,
+      rgba(165, 216, 255, 0.08) 0%,
+      rgba(165, 216, 255, 0.03) 30%,
+      transparent 70%
+   );
+   border-radius: 50%;
+   pointer-events: none; /* Crucial: lets you click links THROUGH the glow */
+   z-index: 0;           /* Stays behind text/images */
+   transform: translate(-50%, -50%);
+   transition: opacity 1s ease;
+   will-change: transform; /* Optimizes for MacBook Pro performance */
+}
+
+/* When hovering over cards or links, make the aura bigger and slightly brighter */
+.cursor-aura.is-hovering {
+   width: 1000px;
+   height: 1000px;
+   background: radial-gradient(
+      circle,
+      rgba(165, 216, 255, 0.12) 0%,
+      rgba(165, 216, 255, 0.05) 30%,
+      transparent 70%
+   );
+}
+
+/* Hide the effect on touch devices (iPad/iPhone) where there is no mouse */
+@media (hover: none) {
+   .cursor-aura {
+      display: none;
+   }
+}
+
+/* --- ABREEZE STUDIO: ADAPTIVE READABILITY --- */
+.post-content p {
+   line-height: 1.8;
+   margin-bottom: 2rem;
+   /* Use the theme's variable so it stays light on dark, and dark on light */
+   color: var(--color-font-one);
+   opacity: 0.9; /* Slightly softer than pure white for high-end feel */
+}
+
+.post-content h2, .post-content h3 {
+   margin-top: 4rem;
+   margin-bottom: 1.5rem;
+   color: var(--color-font-one);
+}
+
+/* Maintain clean images in both modes */
+.post-content img {
+   border-radius: 12px;
+   /* Subtle shadow that works on both modes */
+   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 

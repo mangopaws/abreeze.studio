@@ -9,6 +9,9 @@
 	{{#match @page.show_title_and_feature_image}}
 	{{>posts/header}}
 	{{/match}}
+	<aside class="toc-container">
+		<div class="toc"></div>
+	</aside>
 	<div class="post-wrap global-padding">
 		{{^is "page"}}
         {{#match @custom.sidebar "Without Subscription form"}}
@@ -78,3 +81,14 @@
 {{/if}}
 {{/is}}
 {{/post}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+<script>
+	tocbot.init({
+		tocSelector: '.toc',           // Where to render the table of contents.
+		contentSelector: '.post-content', // Where the headers are located.
+		headingSelector: 'h2, h3',     // Which headings to grab.
+		hasInnerContainers: true,
+	});
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">

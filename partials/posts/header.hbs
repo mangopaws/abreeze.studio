@@ -9,6 +9,13 @@
 				{{>images/other_image other_image=custom_image alt=name}}
 			</div>
 			{{/if}}
+		<div class="post-meta-breadcrumb">
+			<a href="/resources/">Resources</a>
+			<span>→</span>
+			{{#if primary_tag}}<a href="{{primary_tag.url}}">{{primary_tag.name}}</a>{{/if}}
+			<span>•</span>
+			<span class="reading-time">{{reading_time}} min read</span>
+		</div>
 			<h1 class="post-title global-title">{{title}}</h1>
 			{{#if archive_page}}
 			{{#has any="location,website,facebook,twitter"}}
