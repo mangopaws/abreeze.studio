@@ -6793,6 +6793,20 @@ body.font-system .post-content {
 	background-color: #111 !important;
 }
 
+/* Modal subscribe form button */
+.members-cta.is-modal .subscribe-wrap button,
+.members-cta.is-modal .subscribe-wrap button::before {
+	background-color: #000 !important;
+}
+
+.members-cta.is-modal .subscribe-wrap button {
+	color: #fff !important;
+}
+
+.members-cta.is-modal .subscribe-wrap button:hover::before {
+	background-color: #111 !important;
+}
+
 @keyframes modalFadeIn {
 	from {
 		opacity: 0;
