@@ -459,6 +459,15 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    position: relative;
 }
 
+.global-image-orientation.is-natural img,
+.global-image-orientation.is-natural picture,
+.global-image-orientation.is-natural .gh-card-image-wrapper {
+   position: relative;
+   display: block;
+   width: 100%;
+   height: auto;
+}
+
 @supports not (aspect-ratio:1/1) {
    .global-image-orientation {
       padding-bottom: 70%;
