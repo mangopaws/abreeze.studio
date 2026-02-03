@@ -6823,24 +6823,19 @@ body.font-system .post-content {
 }
 
 /* Ghost member form button in modal */
-.members-cta.is-modal form input[type="submit"],
 .members-cta.is-modal form button[type="submit"],
-.members-cta.is-modal .global-button.no-color,
-.members-cta.is-modal button,
-.members-cta.is-modal input[type="submit"] {
+.members-cta.is-modal .subscribe-wrap button {
 	background-color: #000 !important;
 	color: #fff !important;
 }
 
-.members-cta.is-modal .global-button.no-color::before,
-.members-cta.is-modal button::before,
-.members-cta.is-modal input[type="submit"]::before {
+.members-cta.is-modal form button[type="submit"]::before,
+.members-cta.is-modal .subscribe-wrap button::before {
 	background-color: #000 !important;
 }
 
-.members-cta.is-modal .global-button.no-color:hover::before,
-.members-cta.is-modal button:hover::before,
-.members-cta.is-modal input[type="submit"]:hover::before {
+.members-cta.is-modal form button[type="submit"]:hover::before,
+.members-cta.is-modal .subscribe-wrap button:hover::before {
 	background-color: #111 !important;
 }
 
