@@ -6819,9 +6819,18 @@ body.font-system .post-content {
 
 /* Ghost member form button in modal */
 .members-cta.is-modal form input[type="submit"],
-.members-cta.is-modal form button[type="submit"] {
+.members-cta.is-modal form button[type="submit"],
+.members-cta.is-modal .global-button.no-color {
 	background-color: #000 !important;
 	color: #fff !important;
+}
+
+.members-cta.is-modal .global-button.no-color::before {
+	background-color: #000 !important;
+}
+
+.members-cta.is-modal .global-button.no-color:hover::before {
+	background-color: #111 !important;
 }
 
 @keyframes modalFadeIn {
