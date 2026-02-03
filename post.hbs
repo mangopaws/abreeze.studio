@@ -87,8 +87,9 @@
 	tocbot.init({
 		tocSelector: '.toc',           // Where to render the table of contents.
 		contentSelector: '.post-content', // Where the headers are located.
-		headingSelector: 'h2, h3',     // Which headings to grab.
+		headingSelector: 'h1, h2, h3, h4, h5, h6', // Which headings to grab.
 		hasInnerContainers: true,
+		collapseDepth: 6,
 	});
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
