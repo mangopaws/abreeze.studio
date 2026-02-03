@@ -6801,10 +6801,18 @@ body.font-system .post-content {
 
 .members-cta.is-modal .subscribe-wrap button {
 	color: #fff !important;
+	width: 94% !important;
 }
 
 .members-cta.is-modal .subscribe-wrap button:hover::before {
 	background-color: #111 !important;
+}
+
+/* Ghost member form button in modal */
+.members-cta.is-modal form input[type="submit"],
+.members-cta.is-modal form button[type="submit"] {
+	background-color: #000 !important;
+	color: #fff !important;
 }
 
 @keyframes modalFadeIn {
