@@ -6822,20 +6822,24 @@ body.font-system .post-content {
 	background-color: #111 !important;
 }
 
-/* Ghost member form button in modal */
-.members-cta.is-modal form button[type="submit"],
-.members-cta.is-modal .subscribe-wrap button {
+/* Ghost member form button in modal - override global button styles */
+.members-cta.is-modal .subscribe-wrap form button[type="submit"],
+.members-cta.is-modal .subscribe-wrap form button.global-button,
+.members-cta.is-modal form [data-members-form="subscribe"] button {
 	background-color: #000 !important;
 	color: #fff !important;
+	position: relative;
 }
 
-.members-cta.is-modal form button[type="submit"]::before,
-.members-cta.is-modal .subscribe-wrap button::before {
+.members-cta.is-modal .subscribe-wrap form button[type="submit"]::before,
+.members-cta.is-modal .subscribe-wrap form button.global-button::before,
+.members-cta.is-modal form [data-members-form="subscribe"] button::before {
 	background-color: #000 !important;
 }
 
-.members-cta.is-modal form button[type="submit"]:hover::before,
-.members-cta.is-modal .subscribe-wrap button:hover::before {
+.members-cta.is-modal .subscribe-wrap form button[type="submit"]:hover::before,
+.members-cta.is-modal .subscribe-wrap form button.global-button:hover::before,
+.members-cta.is-modal form [data-members-form="subscribe"] button:hover::before {
 	background-color: #111 !important;
 }
 
