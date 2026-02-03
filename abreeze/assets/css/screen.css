@@ -6794,6 +6794,34 @@ body.font-system .post-content {
 	opacity: 1;
 }
 
+/* --- ABREEZE STUDIO: MEDIUM BADGE --- */
+.medium-badge {
+   position: absolute;
+   top: 12px;
+   right: 12px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 4px 8px;
+   min-width: 24px;
+   height: 24px;
+   border-radius: 8px;
+   background: #000;
+   color: #fff;
+   font-size: 1.2rem;
+   font-weight: 600;
+   letter-spacing: 0.02em;
+   text-decoration: none;
+   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+   transition: transform 0.2s ease, opacity 0.2s ease;
+   z-index: 2;
+}
+
+.medium-badge:hover {
+   transform: translateY(-1px);
+   opacity: 0.9;
+}
+
 /* Ensure long TOCs stay fully visible */
 .toc-container {
 	max-height: 70vh;
