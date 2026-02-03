@@ -7051,8 +7051,8 @@ body.font-system .post-content {
 body:not(.is-white-text) .cursor-aura {
    background: radial-gradient(
       circle,
-      rgba(255, 77, 130, 0.12) 0%,
-      rgba(255, 77, 130, 0.04) 30%,
+      rgba(255, 77, 130, 0.25) 0%,
+      rgba(255, 77, 130, 0.10) 30%,
       transparent 70%
    );
 }
@@ -7073,8 +7073,8 @@ body:not(.is-white-text) .cursor-aura {
 body:not(.is-white-text) .cursor-aura.is-hovering {
    background: radial-gradient(
       circle,
-      rgba(255, 77, 130, 0.18) 0%,
-      rgba(255, 77, 130, 0.06) 30%,
+      rgba(255, 77, 130, 0.35) 0%,
+      rgba(255, 77, 130, 0.15) 30%,
       transparent 70%
    );
 }
