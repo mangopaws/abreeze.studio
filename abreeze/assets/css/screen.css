@@ -6793,6 +6793,11 @@ body.font-system .post-content {
 	background-color: #111 !important;
 }
 
+/* Modal subscribe form styling */
+.members-cta.is-modal .subscribe-form {
+	background-color: transparent !important;
+}
+
 /* Modal subscribe form button */
 .members-cta.is-modal .subscribe-wrap button,
 .members-cta.is-modal .subscribe-wrap button::before {
