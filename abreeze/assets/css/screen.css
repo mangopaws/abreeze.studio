@@ -459,6 +459,25 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    position: relative;
 }
 
+/* Ensure card image links don't reserve space when images fail to render */
+.gh-card-image-link.global-image-orientation {
+   aspect-ratio: auto !important;
+   padding-bottom: 0 !important;
+   min-height: 0;
+   height: auto;
+   line-height: normal;
+}
+
+.gh-card-image-link.global-image-orientation > img,
+.gh-card-image-link.global-image-orientation picture,
+.gh-card-image-link.global-image-orientation .gh-card-image-wrapper {
+   position: relative;
+   display: block;
+   width: 100%;
+   height: auto;
+   min-height: 0;
+}
+
 @supports not (aspect-ratio:1/1) {
    .global-image-orientation {
       padding-bottom: 70%;
@@ -6772,5 +6791,11 @@ body.font-system .post-content {
 
 .meta-comment-count:hover {
 	opacity: 1;
+}
+
+/* Ensure long TOCs stay fully visible */
+.toc-container {
+	max-height: 70vh;
+	overflow: auto;
 }
 
