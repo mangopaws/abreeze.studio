@@ -69,6 +69,7 @@
             },
             "hero_title_text": {
                 "type": "text",
+                "default": "<strong>Welcome to the Studio 🎨</strong><br>Journals on the journey and the human experience.",
                 "group": "homepage"
             },
             "hero_options": {
@@ -177,7 +178,7 @@
             },
             "featured_section_subtitle": {
                 "type": "text",
-                "default": "Stories from Your Area",
+                "default": "Highlighted stories and design explorations.",
                 "group": "homepage",
                 "description": "Subtitle text for featured section"
             },
