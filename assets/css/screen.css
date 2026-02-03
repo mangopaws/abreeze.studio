@@ -1398,6 +1398,27 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    font-weight: var(--font-weight-one-bold);
 }
 
+/* Hero Container */
+.hero-container {
+   text-align: center;
+   max-width: 1020px;
+   margin: 0 auto;
+}
+
+.hero-bold-title {
+   font-size: 3.5rem;
+   font-weight: var(--font-weight-one-bold);
+   margin: 0 0 0.5rem 0;
+   letter-spacing: var(--letter-spacing, normal);
+}
+
+.hero-subtitle {
+   font-size: 1.5rem;
+   font-weight: var(--font-weight-one-light);
+   margin: 0;
+   letter-spacing: var(--letter-spacing, normal);
+}
+
 /* Search
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hero-search {
