@@ -1,10 +1,11 @@
 {{^match @custom.style_for_featured_section "Disable"}}
 {{#get "posts" limit="3" filter="featured:true" include="authors" as |featured|}}
 {{#if featured}}
-<small class="global-subtitle">{{@custom.featured_section_subtitle}}</small>
+<small class="global-subtitle">{{t "Featured posts"}}</small>
 <div class="featured-section global-radius{{#match @custom.style_for_featured_section "Gray"}} is-gray{{else match @custom.style_for_featured_section "Accent color"}} global-dynamic-color is-accent{{else match @custom.style_for_featured_section "Accent color/Gray"}} is-accent-gray{{else match @custom.style_for_featured_section "Gray/Accent color"}} is-gray-accent{{/match}}">
 	{{#foreach featured to="1"}}{{>images/background_cover custom_cover=feature_image is_featured=true}}{{/foreach}}
 	<h2 class="featured-title{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}"><strong>✨ In Focus</strong></h2>
+	<small class="featured-subtitle{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{@custom.featured_section_subtitle}}</small>
 	<div class="featured-content{{#foreach posts}}{{#if @last}} items-{{@number}}{{/if}}{{/foreach}}{{#match @custom.style_for_featured_section "Gray/Accent color"}} global-dynamic-color{{/match}}">
 		{{#foreach featured}}
 		{{>item show_excerpt=false is_featured=true}}
