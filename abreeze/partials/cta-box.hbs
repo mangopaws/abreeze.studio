@@ -1,9 +1,0 @@
-<div class="cta-box{{#match intensity "Subtle"}} is-subtle{{/match}}">
-	<div class="cta-box-content">
-		<h3 class="cta-box-title">{{#if @custom.cta_title}}{{@custom.cta_title}}{{else}}Subscribe to our newsletter{{/if}}</h3>
-		{{#if @custom.cta_description}}
-		<p class="cta-box-description">{{@custom.cta_description}}</p>
-		{{/if}}
-		{{>members/subscribe_form is_cta=true}}
-	</div>
-</div>
