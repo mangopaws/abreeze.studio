@@ -6,7 +6,7 @@
 			{{#foreach authors}}
 			<a href="{{url}}" class="global-meta-avatar{{#if profile_image}} is-image global-image{{/if}}">
 				{{#if profile_image}}
-				{{>images/other_image other_image=profile_image alt=name lazy=true}}
+				{{>images/other_image other_image=profile_image alt=name}}
 				{{else}}
 				<span>{{name}}</span>
 				{{/if}}

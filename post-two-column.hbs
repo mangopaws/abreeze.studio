@@ -1,0 +1,72 @@
+{{!< default}}
+{{#post}}
+{{^is "page"}}
+{{#match @custom.progress_bar true}}
+{{#if access}}<progress class="post-progress" max="100" value="0"></progress>{{/if}}
+{{/match}}
+{{/is}}
+<article class="post-section is-two-column{{^is "page"}}{{^match @custom.sidebar "Disable"}} is-sidebar{{/match}}{{/is}}">
+	{{#match @page.show_title_and_feature_image}}
+	{{>posts/header}}
+	{{/match}}
+	<aside class="toc-container">
+		<div class="toc"></div>
+	</aside>
+	<div class="post-wrap global-padding">
+		{{^is "page"}}
+        {{#match @custom.sidebar "Without Subscription form"}}
+		<div class="post-sidebar">
+			{{>posts/sidebar}}
+		</div>
+		{{/match}}
+		{{#match @custom.sidebar "With Subscription form"}}
+		<div class="post-sidebar">
+		{{#if access}}
+		{{>posts/sidebar}}
+		{{>members/sidebar_form is_box=true}}
+		{{else if html}}
+		{{>posts/sidebar}}
+		{{/if}}
+		</div>
+		{{/match}}
+        {{#match @custom.sidebar "With sticky Subscription form"}}
+		<div class="post-sidebar">
+		{{#if access}}
+		{{>posts/sidebar}}
+		{{>members/sidebar_form is_box=true is_sticky=true}}
+		{{else if html}}
+		{{>posts/sidebar}}
+		{{/if}}
+		</div>
+		{{/match}}
+		{{/is}}
+		<div class="post-content{{#match @custom.image_lightbox true}} enable-lightbox{{/match}}">
+			{{#if access}}
+			{{#match @custom.table_of_contents true}}
+			<div class="table-of-contents">
+				<h4>Table of Contents</h4>
+				<ul id="toc-list"></ul>
+			</div>
+			{{/match}}
+			{{{content}}}
+			{{else}}
+			{{#match @custom.paywall_type "Excerpt"}}
+			{{{content}}}
+			{{else}}
+			<p class="gh-content-paywall">
+				<a class="gh-signin" data-portal="signin">Sign in</a><span>&nbsp;or&nbsp;</span><a class="gh-subscribe" data-portal="signup">Subscribe</a>&nbsp;to read the rest of this post.
+			</p>
+			{{/match}}
+			{{/if}}
+		</div>
+	</div>
+	{{^is "page"}}
+	<div class="post-footer global-padding">
+		{{#match @custom.related_posts true}}
+		{{>related}}
+		{{/match}}
+		{{>posts/navigation}}
+	</div>
+	{{/is}}
+</article>
+{{/post}}

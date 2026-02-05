@@ -2357,6 +2357,12 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
 }
 
+@media (max-width:1024px) {
+   .loop-wrap {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+
 @media (max-width:768px) {
    .loop-wrap {
       grid-template-columns: repeat(1, 1fr);
@@ -3047,6 +3053,23 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    width: 100%;
    margin-right: auto;
    margin-left: auto;
+}
+
+/* Two-column layout */
+.post-section.is-two-column .post-header-wrap {
+   flex-wrap: nowrap;
+   gap: 5vw;
+   align-items: flex-start;
+}
+
+.post-section.is-two-column .post-header-content {
+   width: 50%;
+   flex-shrink: 1;
+}
+
+.post-section.is-two-column .post-header-image {
+   width: 50%;
+   flex-shrink: 1;
 }
 
 /* Content
