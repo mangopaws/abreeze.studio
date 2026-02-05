@@ -583,6 +583,11 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    grid-column: span 6 !important;
 }
 
+.global-subtitle:empty {
+   display: none !important;
+   margin: 0 !important;
+}
+
 /* Link overlay
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .global-link {
