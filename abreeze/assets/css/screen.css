@@ -499,6 +499,19 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
 /* Cover
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+   .loop-wrap .item-image {
+      aspect-ratio: auto !important;
+      height: clamp(220px, 22vw, 360px);
+   }
+
+   .loop-wrap .item-image.global-image-orientation,
+   .loop-wrap .item-image.global-image-orientation.is-portrait,
+   .loop-wrap .item-image.global-image-orientation.is-panoramic,
+   .loop-wrap .item-image.global-image-orientation.is-square,
+   .loop-wrap .item-image.global-image-orientation.is-natural {
+      aspect-ratio: auto !important;
+   }
 .global-cover {
    position: absolute;
    z-index: -1;
@@ -2078,6 +2091,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    aspect-ratio: 4 / 3 !important;
    overflow: hidden !important;
    display: block !important;
+   position: relative;
    transition: transform .3s ease;
    will-change: transform;
 }
@@ -2103,6 +2117,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
 .loop-wrap .item-image.global-image-orientation {
    aspect-ratio: 4 / 3 !important;
+   padding-bottom: 0 !important;
 }
 
 .loop-wrap .item-image.global-image-orientation.is-portrait,
@@ -2110,6 +2125,17 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 .loop-wrap .item-image.global-image-orientation.is-square,
 .loop-wrap .item-image.global-image-orientation.is-natural {
    aspect-ratio: 4 / 3 !important;
+   padding-bottom: 0 !important;
+}
+
+@supports not (aspect-ratio:1/1) {
+   .loop-wrap .item-image.global-image-orientation,
+   .loop-wrap .item-image.global-image-orientation.is-portrait,
+   .loop-wrap .item-image.global-image-orientation.is-panoramic,
+   .loop-wrap .item-image.global-image-orientation.is-square,
+   .loop-wrap .item-image.global-image-orientation.is-natural {
+      padding-bottom: 75% !important;
+   }
 }
 
 .item-image:hover {
