@@ -2,8 +2,6 @@
 <div class="post-share">
 	{{/if}}
 	<div class="post-share-wrap">
-		<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener" aria-label="Share on Facebook">{{>icons/social/facebook}}</a>
-		
 		{{^if is_header}}
 		<a href="javascript:" class="post-share-link" id="copy" data-clipboard-target="#copy-link" aria-label="Copy link">{{>icons/site/copy}}</a>
 		<small class="share-link-info global-alert">{{t "The link has been copied!"}}</small>

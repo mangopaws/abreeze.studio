@@ -48,19 +48,9 @@
 	</div>
 </div>
 {{else}}
-{{#if @custom.show_author}}
 <div class="global-meta">
 	<div class="global-meta-content">
-		{{t "by"}}
-		{{#has author="count:1"}}
-		{{authors}}
-		{{else has author="count:2"}}
-		{{authors separator=(t "&")}}
-		{{else has author="count:>2"}}
-		{{authors limit="1"}}
-		{{t "and others"}}
-		{{/has}}
+		<time datetime="{{date format="YYYY-MM-DD"}}"><span>{{date published_at format="LL"}} ∙ </span>{{reading_time minute=(t "1 minute read") minutes=(t "% minutes read")}}</time>
 	</div>
 </div>
-{{/if}}
 {{/if}}

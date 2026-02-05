@@ -2107,6 +2107,44 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    margin-bottom: 1.8vh;
 }
 
+.item-authors {
+   position: absolute;
+   bottom: 13px;
+   left: 13px;
+   z-index: 1;
+   margin: 0;
+   display: flex;
+   gap: 8px;
+   flex-wrap: wrap;
+}
+
+.item-author {
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+   overflow: hidden;
+   display: inline-block;
+   flex-shrink: 0;
+   background-color: rgba(255, 255, 255, 0.2);
+   border: 3px solid var(--color-body);
+   pointer-events: auto;
+}
+
+.item-author img,
+.item-author picture {
+   width: 100% !important;
+   height: 100% !important;
+   object-fit: cover !important;
+   display: block !important;
+}
+
+.medium-badge {
+   position: absolute;
+   bottom: 13px;
+   right: 13px;
+   z-index: 2;
+}
+
 .item-image {
    overflow: hidden !important;
    display: block !important;

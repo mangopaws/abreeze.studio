@@ -18,16 +18,13 @@
 		</div>
 			<h1 class="post-title global-title">{{title}}</h1>
 			{{#if archive_page}}
-			{{#has any="location,website,facebook,twitter"}}
+			{{#has any="location,website,twitter"}}
 			<div class="archive-social">
 				{{#if location}}
 				<span>{{>icons/site/pin}}{{location}}</span>
 				{{/if}}
 				{{#if website}}
 				<a href="{{website}}" target="_blank" rel="noopener">{{>icons/site/link}}{{t "Website"}}</a>
-				{{/if}}
-				{{#if facebook}}
-				<a href="{{facebook_url}}" target="_blank" rel="noopener">{{>icons/social/facebook}}Facebook</a>
 				{{/if}}
 				{{#if twitter}}
 				<a href="{{twitter_url}}" target="_blank" rel="noopener">{{>icons/social/x}}X/Twitter</a>

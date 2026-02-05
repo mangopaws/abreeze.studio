@@ -7,6 +7,17 @@
 	{{#if section_title}}<small class="global-subtitle item-subtitle">{{section_title}}</small>{{/if}}
 	<div class="item-image-wrapper">
 		<a href="{{url}}" class="item-image global-image global-radius">{{>images/loop_image}}</a>
+		{{#if @custom.show_author}}
+		<div class="item-authors">
+			{{#foreach authors}}
+			<a href="{{url}}" class="item-author" title="{{name}}">
+				{{#if profile_image}}
+				{{>images/other_image other_image=profile_image alt=name}}
+				{{/if}}
+			</a>
+			{{/foreach}}
+		</div>
+		{{/if}}
 		{{#has tag="#medium"}}
 			<a href="{{canonical_url}}" class="medium-badge" title="Read on Medium" target="_blank">M</a>
 		{{/has}}
