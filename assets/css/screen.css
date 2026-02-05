@@ -1418,11 +1418,12 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 }
 
 .hero-subtitle {
-   font-size: 2.2rem;
-   font-weight: 400;
+   font-size: 10rem;
+   font-weight: 300;
    margin: 0;
-   letter-spacing: 0;
+   letter-spacing: -0.02em;
    color: var(--color-font-one);
+   line-height: 1.15;
 }
 
 /* Search
