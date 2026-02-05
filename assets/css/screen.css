@@ -2105,13 +2105,19 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 }
 
 .loop-wrap .item-image {
-   aspect-ratio: 4 / 3;
-   height: auto;
+   aspect-ratio: 4 / 3 !important;
+   height: auto !important;
 }
 
 .item-image a {
    display: block;
    height: 100%;
+}
+
+.loop-wrap .item-image a,
+.loop-wrap .item-image .gh-card-image-wrapper {
+   aspect-ratio: 4 / 3 !important;
+   height: 100% !important;
 }
 
 .item-image picture,
