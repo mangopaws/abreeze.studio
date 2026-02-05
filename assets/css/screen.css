@@ -562,7 +562,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    font-size: clamp(5.5rem, 6vw, 6.6rem) !important;
    font-weight: 300 !important;
    line-height: 1.25 !important;
-   margin: 0 !important;
+   margin: 0 0 3rem 0 !important;
    letter-spacing: -0.996125px !important;
 }
 
