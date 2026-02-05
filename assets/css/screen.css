@@ -1408,10 +1408,15 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 .hero-bold-title {
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
    font-size: 10rem;
-   font-weight: 300;
+   font-weight: 700;
    margin: 0 0 0.5rem 0;
    letter-spacing: -0.02em;
    line-height: 1.15;
+   text-align: left;
+}
+
+.hero-bold-title span {
+   font-weight: 700;
 }
 
 .hero-subtitle {
