@@ -686,12 +686,12 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
 .global-tags small,
 .global-tags a {
-   font-size: 1.2rem;
-   font-weight: 400;
+   font-size: 1.4rem;
+   font-weight: 500;
    line-height: 1;
    display: inline-block;
    margin: 0;
-   padding: 6px 12px;
+   padding: 7px 14px;
    border-radius: 100px;
 }
 
