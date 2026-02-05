@@ -2100,8 +2100,12 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
 /* Image
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
-.item-image {
+.item-image-wrapper {
+   position: relative;
    margin-bottom: 1.8vh;
+}
+
+.item-image {
    overflow: hidden !important;
    display: block !important;
    position: relative;

@@ -5,7 +5,12 @@
 	{{/if}}
 	{{#if feature_image}}
 	{{#if section_title}}<small class="global-subtitle item-subtitle">{{section_title}}</small>{{/if}}
-	<a href="{{url}}" class="item-image global-image global-radius">{{>images/loop_image}}</a>
+	<div class="item-image-wrapper">
+		<a href="{{url}}" class="item-image global-image global-radius">{{>images/loop_image}}</a>
+		{{#has tag="#medium"}}
+			<a href="{{canonical_url}}" class="medium-badge" title="Read on Medium" target="_blank">M</a>
+		{{/has}}
+	</div>
 
 	{{/if}}
 	<div class="item-content">
