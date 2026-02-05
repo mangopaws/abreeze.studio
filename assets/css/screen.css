@@ -2119,15 +2119,20 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 }
 
 .item-author {
-   width: 48px;
-   height: 48px;
+   width: 42px;
+   height: 42px;
    border-radius: 50%;
    overflow: hidden;
    display: inline-block;
    flex-shrink: 0;
-   background-color: rgba(255, 255, 255, 0.2);
-   border: 3px solid var(--color-body);
+   background-color: transparent;
+   border: 3px solid transparent;
    pointer-events: auto;
+   transition: border-color 0.2s ease;
+}
+
+.item-author:hover {
+   border-color: rgba(255, 255, 255, 0.5);
 }
 
 .item-author img,
