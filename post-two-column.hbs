@@ -50,14 +50,8 @@
 			{{/match}}
 			{{{content}}}
 			{{else}}
-			{{#match @custom.paywall_type "Excerpt"}}
-			{{{content}}}
-			{{else}}
-			<p class="gh-content-paywall">
-				<a class="gh-signin" data-portal="signin">Sign in</a><span>&nbsp;or&nbsp;</span><a class="gh-subscribe" data-portal="signup">Subscribe</a>&nbsp;to read the rest of this post.
-			</p>
-			{{/match}}
-			{{/if}}
+			{{#if html}}
+			<div class="members-cta-teaser">
 		</div>
 	</div>
 	{{^is "page"}}
