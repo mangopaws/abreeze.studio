@@ -4,7 +4,7 @@
 	<a href="{{url}}" class="global-link" aria-label="{{title}}"></a>
 	{{/if}}
 	{{#if feature_image}}
-	<small class="global-subtitle item-subtitle">{{section_title}}</small>
+	{{#if section_title}}<small class="global-subtitle item-subtitle">{{section_title}}</small>{{/if}}
 	<a href="{{url}}" class="item-image global-image global-radius">
 		{{>images/loop_image}}
 	</a>
