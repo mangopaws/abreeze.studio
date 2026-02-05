@@ -49,9 +49,23 @@
 			</div>
 			{{/match}}
 			{{{content}}}
+			{{^is "page"}}
+			{{>posts/share}}
+			{{/is}}
+			{{#match @custom.cta_intensity "Standard"}}
+			{{>cta-box}}
+			{{/match}}
 			{{else}}
 			{{#if html}}
 			<div class="members-cta-teaser">
+				{{{html}}}
+			</div>
+			{{/if}}
+			{{!-- Show inline CTA unless set to Footer Only or None --}}
+			{{^match @custom.member_cta_style "Footer Only"}}
+			{{>members/cta}}
+			{{/match}}
+			{{/if}}
 		</div>
 	</div>
 	{{^is "page"}}
