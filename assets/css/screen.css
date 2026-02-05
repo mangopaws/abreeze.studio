@@ -554,10 +554,23 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    margin: 0;
 }
 
+.loop-subtitle-title {
+   font-family: var(--font-family-one);
+   font-size: clamp(5.5rem, 6vw, 6.6rem);
+   font-weight: 300;
+   line-height: 1.25;
+   margin: 0;
+   letter-spacing: -0.996125px;
+}
+
+.loop-subtitle-title span {
+   font-weight: 700;
+}
+
 /* Subtitle
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .global-subtitle {
-   font-size: 2rem;
+   font-size: clamp(1.6rem, 1.2vw + 1.2rem, 2rem);
    font-weight: 400;
    line-height: 1.1;
    display: block;
@@ -647,6 +660,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    display: flex;
    align-items: flex-start;
    flex-wrap: wrap;
+   gap: 6px;
 }
 
 .global-tags small:last-child,
@@ -670,11 +684,10 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 .global-tags small,
 .global-tags a {
    font-size: 1.2rem;
-   font-weight: var(--font-weight-three-medium);
-   line-height: 1.2;
+   font-weight: 400;
+   line-height: 1;
    display: inline-block;
-   margin-right: 6px;
-   margin-bottom: 6px;
+   margin: 0;
    padding: 6px 12px;
    border-radius: 100px;
 }
@@ -1405,10 +1418,10 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
 .hero-bold-title {
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-   font-size: 10rem;
+   font-size: clamp(4.8rem, 6.8vw, 10rem);
    font-weight: 700;
    margin: 0 0 0.5rem 0;
-   letter-spacing: -0.02em;
+   letter-spacing: -0.996125px;
    line-height: 1.15;
    text-align: left;
 }
@@ -1418,10 +1431,10 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 }
 
 .hero-subtitle {
-   font-size: 10rem;
+   font-size: clamp(3.6rem, 6vw, 10rem);
    font-weight: 300;
    margin: 0;
-   letter-spacing: -0.02em;
+   letter-spacing: -0.996125px;
    color: var(--color-font-one);
    line-height: 1.15;
 }
@@ -2081,8 +2094,19 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .item-image {
    margin-bottom: 1.8vh;
+   aspect-ratio: 4 / 3;
+   overflow: hidden;
+   display: block;
    transition: transform .3s ease;
    will-change: transform;
+}
+
+.item-image picture,
+.item-image img {
+   width: 100%;
+   height: 100%;
+   display: block;
+   object-fit: cover;
 }
 
 .item-image:hover {
