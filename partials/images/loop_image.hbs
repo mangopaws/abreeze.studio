@@ -1,17 +1,15 @@
-<div class="gh-card-image-wrapper" style="position: relative;">
-    {{!-- The Post Image --}}
-    <img class="gh-card-image"
-        srcset="{{img_url feature_image size="s"}} 300w,
-                {{img_url feature_image size="m"}} 600w"
-        sizes="(max-width: 1000px) 400px, 700px"
-        src="{{img_url feature_image size="m"}}"
-        alt="{{title}}"
-    />
+{{!-- The Post Image --}}
+<img class="gh-card-image"
+    srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 600w"
+    sizes="(max-width: 1000px) 400px, 700px"
+    src="{{img_url feature_image size="m"}}"
+    alt="{{title}}"
+/>
 
-    {{!-- The Badge Logic: Checks for internal tag #medium --}}
-    {{#has tag="#medium"}}
-        <a href="{{canonical_url}}" class="medium-badge" title="Read on Medium" target="_blank">
-            M
-        </a>
-    {{/has}}
-</div>
+{{!-- The Badge Logic: Checks for internal tag #medium --}}
+{{#has tag="#medium"}}
+    <a href="{{canonical_url}}" class="medium-badge" title="Read on Medium" target="_blank">
+        M
+    </a>
+{{/has}}
