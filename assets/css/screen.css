@@ -454,17 +454,6 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    padding-bottom: 0;
    aspect-ratio: initial;
 }
-.loop-wrap .item-image {
-   aspect-ratio: auto !important;
-   height: clamp(220px, 22vw, 360px);
-}
-.loop-wrap .item-image.global-image-orientation,
-.loop-wrap .item-image.global-image-orientation.is-portrait,
-.loop-wrap .item-image.global-image-orientation.is-panoramic,
-.loop-wrap .item-image.global-image-orientation.is-square,
-.loop-wrap .item-image.global-image-orientation.is-natural {
-   aspect-ratio: auto !important;
-}
 
 .global-image-orientation.is-natural > img {
    position: relative;
