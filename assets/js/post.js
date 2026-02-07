@@ -7,6 +7,8 @@
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 const readingProgress=(e,t)=>{const o=document.querySelector(e),n=document.querySelector(t),a=()=>{const e=o.getBoundingClientRect(),t=window.innerHeight/2;Math.round(n.max-n.value);e.top>t&&(n.value=0),e.top<t&&(n.value=n.max),e.top<=t&&e.bottom>=t&&(n.value=n.max*Math.abs(e.top-t)/e.height),window.addEventListener("scroll",a)};window.addEventListener("scroll",a)};
 
+
+
 /* Custom settings for progress bar */
 !function(){const a=document.querySelector(".post-progress");if(a){
 	// Enhanced reading progress with scroll-based calculation
@@ -69,6 +71,31 @@ const readingProgress=(e,t)=>{const o=document.querySelector(e),n=document.query
 		li.appendChild(a);
 		tocList.appendChild(li);
 	});
+}();
+
+/* Sticky TOC switch
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+!function(){
+	const inlineToc = document.querySelector(".post-content .table-of-contents");
+	const stickyToc = document.querySelector(".toc-container");
+	if (!inlineToc || !stickyToc) return;
+	const body = document.body;
+	let sentinel = document.querySelector(".toc-sentinel");
+	if (!sentinel) {
+		sentinel = document.createElement("div");
+		sentinel.className = "toc-sentinel";
+		inlineToc.parentNode.insertBefore(sentinel, inlineToc);
+	}
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				body.classList.remove("toc-is-sticky");
+			} else {
+				body.classList.add("toc-is-sticky");
+			}
+		});
+	}, { rootMargin: "0px 0px 0px 0px", threshold: 0 });
+	observer.observe(sentinel);
 }();
 
 /* clipboard.js

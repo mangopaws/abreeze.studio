@@ -3129,6 +3129,14 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    margin-top: 3vh;
 }
 
+.post-tags + .post-title {
+   margin-top: 1.6vh;
+}
+
+.post-header.is-split .post-tags {
+   margin-bottom: 1.6vh;
+}
+
 /* Title
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .post-title {
@@ -3171,6 +3179,126 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    opacity: .6;
 }
 
+/* Layout variants
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.post-header.is-split .post-header-wrap {
+   flex-wrap: nowrap;
+   gap: 5vw;
+   align-items: flex-start;
+}
+
+.post-header.is-split .post-header-content,
+.post-header.is-split .post-header-image {
+   width: 45%;
+   flex-shrink: 1;
+}
+
+.post-header.is-split .post-header-image {
+   width: 55%;
+}
+
+.post-header.is-split .post-header-image {
+   margin-top: 0;
+}
+
+.post-header.is-stacked .post-header-image {
+   margin-top: 0;
+   margin-bottom: 3.4vh;
+}
+
+.post-header.is-minimal .post-header-image {
+   display: none;
+}
+
+/* Hero header
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.post-hero {
+   position: relative;
+   margin-top: 2vh;
+   margin-bottom: 7vh;
+   color: var(--color-font-white);
+}
+
+.post-hero-media {
+   position: relative;
+}
+
+.post-hero-media img,
+.post-hero-media picture {
+   display: block;
+   width: 100%;
+   height: 70vh;
+   object-fit: cover;
+}
+
+.post-hero-overlay {
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .45) 60%, rgba(0, 0, 0, .7) 100%);
+}
+
+.post-hero-wrap {
+   position: absolute;
+   inset: 0;
+   display: flex;
+   align-items: flex-end;
+   padding-top: 6vh;
+   padding-bottom: 6vh;
+}
+
+.post-hero-content {
+   max-width: var(--max-width-post-wrap-one);
+}
+
+.post-hero .post-meta-breadcrumb,
+.post-hero .post-excerpt {
+   color: rgba(255, 255, 255, .92);
+}
+
+.post-hero .post-meta-breadcrumb a {
+   color: rgba(255, 255, 255, .92);
+}
+
+.post-hero .post-meta-wrap {
+   border-top: 1px solid rgba(255, 255, 255, .25);
+}
+
+.post-hero .post-tags a,
+.post-hero .post-tags small {
+   color: var(--color-font-white);
+   border-color: rgba(255, 255, 255, .25);
+   background-color: rgba(0, 0, 0, .35);
+}
+
+.post-hero-caption {
+   font-size: 1.1rem;
+   margin-top: 7px;
+   opacity: var(--opacity-one);
+   color: var(--color-font-one);
+}
+
+.post-hero.is-no-image {
+   color: var(--color-font-one);
+}
+
+.post-hero.is-no-image .post-hero-wrap {
+   position: static;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.post-hero.is-no-image .post-meta-breadcrumb,
+.post-hero.is-no-image .post-meta-breadcrumb a,
+.post-hero.is-no-image .post-excerpt {
+   color: inherit;
+}
+
+.post-hero.is-no-image .post-tags a,
+.post-hero.is-no-image .post-tags small {
+   color: inherit;
+   background-color: transparent;
+}
+
 /* Meta
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .post-meta-wrap {
@@ -3203,6 +3331,16 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
       margin-bottom: 5vh;
    }
 
+   .post-hero {
+      margin-top: 0;
+      margin-bottom: 5vh;
+   }
+
+   .post-hero-media img,
+   .post-hero-media picture {
+      height: 60vh;
+   }
+
    .post-header-content {
       max-width: var(--max-width-post-wrap-two);
    }
@@ -3225,6 +3363,24 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
    .post-header-image {
       margin-top: 3.4vh;
+   }
+
+   .post-header.is-split .post-header-wrap {
+      flex-wrap: wrap;
+   }
+
+   .post-header.is-split .post-header-content,
+   .post-header.is-split .post-header-image {
+      width: 100%;
+   }
+
+   .post-header.is-split .post-header-image {
+      margin-top: 3.4vh;
+   }
+
+   .post-hero-media img,
+   .post-hero-media picture {
+      height: 52vh;
    }
 
 }
@@ -4184,6 +4340,24 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 .post-section.is-sidebar .kg-header-card.kg-v2.kg-layout-split .kg-header-card-content {
    display: flex;
    flex-direction: column;
+}
+
+/* Keep header cards split in content on desktop */
+.post-section.is-sidebar .post-content .kg-header-card.kg-v2.kg-layout-split .kg-header-card-content {
+   display: flex !important;
+   flex-direction: row !important;
+   align-items: stretch;
+}
+
+.post-content .kg-header-card.kg-v2.kg-layout-split .kg-header-card-image,
+.post-content .kg-header-card.kg-v2.kg-layout-split .kg-header-card-text {
+   flex: 1 1 50%;
+}
+
+@media (max-width: 900px) {
+   .post-section.is-sidebar .post-content .kg-header-card.kg-v2.kg-layout-split .kg-header-card-content {
+      flex-direction: column !important;
+   }
 }
 
 .post-section.is-sidebar .kg-signup-card .kg-signup-card-text,
@@ -6667,11 +6841,41 @@ body.season-winter {
 /* Table of Contents
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .table-of-contents {
-	margin: 0 0 40px;
+   margin: 2rem 0 40px;
+   position: sticky;
+   top: 120px;
+   z-index: 10;
 	padding: 24px;
 	background: var(--color-bg-box);
 	border: var(--border) var(--color-border);
 	border-radius: var(--border-radius);
+}
+
+/* Only the left TOC should be sticky */
+.post-content .table-of-contents {
+   position: static;
+   top: auto;
+   z-index: auto;
+}
+
+/* Switch between inline and sticky TOC */
+.toc-container {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+   transform: translateY(6px);
+   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.toc-sentinel {
+   height: 1px;
+}
+
+.toc-is-sticky .post-content .table-of-contents {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .table-of-contents h4 {
@@ -7082,10 +7286,19 @@ body.font-system .post-content {
 	.toc-container {
 		position: fixed;
 		left: 5vw;            /* Adjust based on your whitespace preference */
-		top: 15vh;
+      top: 220px;
 		width: 200px;
 		z-index: 10;
+      max-height: calc(100vh - 260px);
+      overflow: auto;
 	}
+
+   .toc-is-sticky .toc-container {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+   }
 
 	.post-content {
 		margin-left: 300px;   /* Make room for the fixed TOC (5vw + 200px TOC width + gap) */
@@ -7124,12 +7337,6 @@ body.font-system .post-content {
 	.toc-container {
 		display: none;
 	}
-
-   /* Ensure long TOCs stay fully visible */
-   .toc-container {
-      max-height: 70vh;
-      overflow: auto;
-   }
 }
 
 /* --- ABREEZE STUDIO: FIXED LOGO --- */

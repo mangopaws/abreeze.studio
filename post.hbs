@@ -7,7 +7,7 @@
 {{/is}}
 <article class="post-section{{^is "page"}}{{^match @custom.sidebar "Disable"}} is-sidebar{{/match}}{{/is}}">
 	{{#match @page.show_title_and_feature_image}}
-	{{>posts/header}}
+	{{>posts/header-split}}
 	{{/match}}
 	<aside class="toc-container">
 		<div class="toc"></div>
@@ -48,24 +48,28 @@
 				<ul id="toc-list"></ul>
 			</div>
 			{{/match}}
-			{{content}}
-			{{^is "page"}}
-			{{>posts/share}}
-			{{/is}}
-			{{#match @custom.cta_intensity "Standard"}}
-			{{>cta-box}}
-			{{/match}}
-			{{else}}
-			{{#if html}}
-			<div class="members-cta-teaser">
-				{{{html}}}
+			{{/if}}
+			<div class="post-content-body">
+				{{#if access}}
+				{{content}}
+				{{^is "page"}}
+				{{>posts/share}}
+				{{/is}}
+				{{#match @custom.cta_intensity "Standard"}}
+				{{>cta-box}}
+				{{/match}}
+				{{else}}
+				{{#if html}}
+				<div class="members-cta-teaser">
+					{{{html}}}
+				</div>
+				{{/if}}
+				{{!-- Show inline CTA unless set to Footer Only or None --}}
+				{{^match @custom.member_cta_style "Footer Only"}}
+				{{>members/cta}}
+				{{/match}}
+				{{/if}}
 			</div>
-			{{/if}}
-			{{!-- Show inline CTA unless set to Footer Only or None --}}
-			{{^match @custom.member_cta_style "Footer Only"}}
-			{{>members/cta}}
-			{{/match}}
-			{{/if}}
 		</div>
 	</div>
 </article>
