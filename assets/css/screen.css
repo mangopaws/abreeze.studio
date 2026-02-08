@@ -6882,6 +6882,10 @@ body.season-winter {
    height: 1px;
 }
 
+.toc-end-sentinel {
+   height: 1px;
+}
+
 .toc-is-sticky .post-content .table-of-contents {
    opacity: 0;
    visibility: hidden;
@@ -7309,6 +7313,12 @@ body.font-system .post-content {
       visibility: visible;
       pointer-events: auto;
       transform: translateY(0);
+   }
+
+   .toc-is-sticky.toc-at-end .toc-container {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
    }
 
    .toc-is-sticky .post-wrap {

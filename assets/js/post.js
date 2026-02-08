@@ -98,6 +98,34 @@ const readingProgress=(e,t)=>{const o=document.querySelector(e),n=document.query
 	observer.observe(sentinel);
 }();
 
+/* Stop sticky TOC at end of post */
+!function(){
+	const article = document.querySelector(".post-section");
+	const stickyToc = document.querySelector(".toc-container");
+	if (!article || !stickyToc) return;
+	const body = document.body;
+	let ticking = false;
+	const update = () => {
+		const articleRect = article.getBoundingClientRect();
+		const stopPoint = window.scrollY + articleRect.bottom - window.innerHeight + 80;
+		if (window.scrollY >= stopPoint) {
+			body.classList.add("toc-at-end");
+		} else {
+			body.classList.remove("toc-at-end");
+		}
+		ticking = false;
+	};
+	const onScroll = () => {
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(update);
+		}
+	};
+	window.addEventListener("scroll", onScroll, { passive: true });
+	window.addEventListener("resize", onScroll);
+	onScroll();
+}();
+
 /* Expand content when sidebar is empty */
 !function(){
 	const article = document.querySelector(".post-section.is-sidebar");
