@@ -4660,6 +4660,17 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
       margin-left: 0;
    }
 
+   .post-section.is-sidebar.is-sidebar-empty .post-sidebar {
+      display: none;
+   }
+
+   .post-section.is-sidebar.is-sidebar-empty .post-content {
+      width: 100%;
+      max-width: min(1200px, var(--max-width-global-wrap));
+      margin-right: auto;
+      margin-left: auto;
+   }
+
    .post-section.is-sidebar .kg-video-card.kg-width-wide,
    .post-section.is-sidebar .kg-image-card.kg-width-wide img,
    .post-section.is-sidebar .kg-video-card.kg-width-full,
@@ -7301,13 +7312,13 @@ body.font-system .post-content {
    }
 
    .toc-is-sticky .post-wrap {
-      padding-left: 260px;
+		padding-left: 260px;
    }
 
-	.post-content {
-		margin-left: 300px;   /* Make room for the fixed TOC (5vw + 200px TOC width + gap) */
-		margin-right: auto;
-	}
+   .post-content {
+      margin-left: 0;
+      margin-right: auto;
+   }
 }
 
 /* 2. Style the links to be clean and minimal */

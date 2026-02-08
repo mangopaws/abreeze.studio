@@ -98,6 +98,17 @@ const readingProgress=(e,t)=>{const o=document.querySelector(e),n=document.query
 	observer.observe(sentinel);
 }();
 
+/* Expand content when sidebar is empty */
+!function(){
+	const article = document.querySelector(".post-section.is-sidebar");
+	if (!article) return;
+	const sidebar = article.querySelector(".post-sidebar");
+	if (!sidebar) return;
+	if (sidebar.children.length === 0) {
+		article.classList.add("is-sidebar-empty");
+	}
+}();
+
 /* clipboard.js
    –––––––––––––––––––––––––––––––––––––––––––––––––––– 
    Version : 2.0.8
