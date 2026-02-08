@@ -7293,7 +7293,7 @@ body.font-system .post-content {
 /* --- ABREEZE STUDIO: STICKY TOC --- */
 
 /* 1. Position the container to the left of the text */
-@media (min-width: 1600px) {
+@media (min-width: 1200px) {
 	.toc-container {
 		position: fixed;
 		left: 5vw;            /* Adjust based on your whitespace preference */
@@ -7312,7 +7312,7 @@ body.font-system .post-content {
    }
 
    .toc-is-sticky .post-wrap {
-		padding-left: 260px;
+      padding-left: 280px;
    }
 
    .post-content {
@@ -7348,7 +7348,7 @@ body.font-system .post-content {
 }
 
 /* Hide on mobile to keep it clean */
-@media (max-width: 1599px) {
+@media (max-width: 1199px) {
 	.toc-container {
 		display: none;
 	}
