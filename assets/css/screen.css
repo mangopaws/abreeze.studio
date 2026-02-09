@@ -7117,6 +7117,18 @@ body.font-system .post-content {
 	display: none;
 }
 
+.members-cta.is-modal h2,
+.members-cta.is-modal p,
+.members-cta.is-modal small,
+.members-cta.is-modal a {
+   color: #111;
+}
+
+.members-cta.is-modal .global-excerpt {
+   color: #111;
+   opacity: 0.8;
+}
+
 .members-cta.is-modal::before {
 	content: '';
 	position: fixed;
