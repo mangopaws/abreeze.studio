@@ -5,11 +5,9 @@
 			{{^has visibility="public"}}<div class="post-tags global-tags">{{>members/visibility_label}}</div>{{/has}}
 			{{/if}}
 			<div class="post-meta-breadcrumb">
-				<a href="/resources/">Resources</a>
+				<a href="{{@site.url}}">{{@site.title}}</a>
 				<span>→</span>
-				{{#if primary_tag}}<a href="{{primary_tag.url}}">{{primary_tag.name}}</a>{{/if}}
-				<span>•</span>
-				<span class="reading-time">{{reading_time}} min read</span>
+				<span>{{title}}</span>
 			</div>
 			<h1 class="post-title global-title">{{title}}</h1>
 			{{#if custom_excerpt}}
